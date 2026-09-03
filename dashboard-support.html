@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AdVantage OOH | Support & RFPs</title>
+  <meta name="description" content="Advertiser dashboard portal. Browse billboard hotspot maps, inspect weekly availability schedules, and submit ad creatives for review.">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <script src="assets/js/theme-toggle.js"></script>
+  <style>
+    /* Premium Dashboard Styles */
+    .dashboard-layout {
+      padding: 2rem 0 var(--spacing-lg) 0;
+    }
+
+    /* Ticket item styles */
+    .ticket-list-item {
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      background: rgba(255, 255, 255, 0.02);
+      margin-bottom: 0.75rem;
+    }
+
+    /* ==========================================================================
+       Dashboard Sidebar Layout styling
+       ========================================================================== */
+    :root {
+      --sidebar-width: 280px;
+      --topbar-height: 70px;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      min-height: 100vh;
+    }
+
+    .dashboard-container {
+      display: flex;
+      min-height: 100vh;
+      width: 100%;
+    }
+
+    /* Sidebar Styling */
+    .dashboard-sidebar {
+      width: var(--sidebar-width);
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1050;
+      background: var(--surface-color);
+      border-right: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    [dir="rtl"] .dashboard-sidebar {
+      left: auto;
+      right: 0;
+      border-right: none;
+      border-left: 1px solid var(--border-color);
+    }
+
+    .sidebar-brand {
+      height: var(--topbar-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .sidebar-brand .logo-link {
+      font-size: 1.3rem;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      color: var(--text-primary) !important;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .sidebar-brand .logo-link i {
+      color: var(--accent-color) !important;
+    }
+
+    .sidebar-brand .logo-link span {
+      color: var(--accent-color) !important;
+      font-weight: 700;
+    }
+
+    .sidebar-close-btn {
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      font-size: 1.25rem;
+      cursor: pointer;
+      padding: 0.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .sidebar-close-btn:hover {
+      color: var(--accent-color);
+    }
+
+    .sidebar-menu {
+      flex: 1;
+      padding: 1.5rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      overflow-y: auto;
+    }
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 0.85rem 1rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: var(--transition);
+      border: 1px solid transparent;
+    }
+
+    .menu-item i {
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+
+    .menu-item:hover {
+      color: var(--accent-color);
+      background: rgba(37, 99, 235, 0.05);
+    }
+
+    .menu-item.active {
+      color: #FFFFFF;
+      background: var(--accent-color);
+      border: 1px solid var(--accent-color);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+    }
+
+    .menu-item.active i {
+      color: #FFFFFF !important;
+    }
+
+    /* Sidebar Footer Styling */
+    .sidebar-footer {
+      padding: 1.25rem;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      background: rgba(0, 0, 0, 0.03);
+    }
+
+    [data-theme="dark"] .sidebar-footer {
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .sidebar-actions {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+
+    .sidebar-actions .theme-toggle-btn {
+      flex: 1;
+      height: 40px;
+      border: 1px solid var(--border-color);
+      background: var(--surface-color);
+      border-radius: 6px;
+      color: var(--text-secondary);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .sidebar-actions .theme-toggle-btn:hover {
+      background: rgba(37, 99, 235, 0.05);
+      border-color: var(--accent-color);
+      color: var(--accent-color);
+    }
+
+    .sidebar-user {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.5rem;
+      border-radius: 8px;
+      background: var(--surface-color);
+      border: 1px solid var(--border-color);
+    }
+
+    .user-avatar {
+      font-size: 1.8rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+    }
+
+    .user-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .user-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    .user-role {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .logout-btn {
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      padding: 0.25rem;
+      transition: var(--transition);
+    }
+
+    .logout-btn:hover {
+      color: #EF4444;
+    }
+
+    /* Sidebar Overlay */
+    .sidebar-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(2, 6, 23, 0.5);
+      backdrop-filter: blur(4px);
+      z-index: 1040;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .sidebar-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Main Content Styling */
+    .dashboard-main-content {
+      flex: 1;
+      margin-left: var(--sidebar-width);
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      transition: margin-left 0.3s ease, margin-right 0.3s ease;
+    }
+
+    [dir="rtl"] .dashboard-main-content {
+      margin-left: 0;
+      margin-right: var(--sidebar-width);
+    }
+
+    /* Topbar Styling */
+    .dashboard-topbar {
+      height: var(--topbar-height);
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .topbar-title {
+      margin: 0;
+      font-size: 1.25rem;
+      font-family: var(--font-heading);
+      color: var(--text-primary);
+    }
+
+    .sidebar-open-btn {
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .sidebar-open-btn:hover {
+      color: var(--accent-color);
+    }
+
+    .topbar-logo-link {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-primary) !important;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+
+    .topbar-logo-link span {
+      color: var(--accent-color) !important;
+    }
+
+    .topbar-logo-link i {
+      color: var(--accent-color) !important;
+    }
+
+    /* Body wrapper */
+    .dashboard-body {
+      padding-bottom: 4rem;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 991.98px) {
+      .dashboard-sidebar {
+        transform: translateX(-100%);
+      }
+
+      [dir="rtl"] .dashboard-sidebar {
+        transform: translateX(100%);
+      }
+
+      .dashboard-sidebar.active {
+        transform: translateX(0);
+      }
+
+      .dashboard-main-content {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+      
+      .dashboard-topbar {
+        padding: 0 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Page Loader -->
+  <div class="page-loader">
+    <div class="spinner"></div>
+  </div>
+
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar" id="dashboard-sidebar">
+      <div class="sidebar-brand">
+        <a href="index.html" class="logo-link">
+          <i class="bi bi-broadcast"></i> AD<span>VANTAGE</span>
+        </a>
+        <button class="sidebar-close-btn d-lg-none" id="sidebar-close" aria-label="Close Sidebar">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      
+      <nav class="sidebar-menu">
+        <a href="dashboard.html" class="menu-item">
+          <i class="bi bi-speedometer2"></i>
+          <span>Overview</span>
+        </a>
+        <a href="dashboard-locator.html" class="menu-item">
+          <i class="bi bi-map"></i>
+          <span>Location Hotspots</span>
+        </a>
+        <a href="dashboard-planner.html" class="menu-item">
+          <i class="bi bi-calendar3"></i>
+          <span>Availability Planner</span>
+        </a>
+        <a href="dashboard-upload.html" class="menu-item">
+          <i class="bi bi-cloud-arrow-up"></i>
+          <span>Ad Creative Portal</span>
+        </a>
+        <a href="dashboard-analytics.html" class="menu-item">
+          <i class="bi bi-bar-chart-line"></i>
+          <span>Campaign Analytics</span>
+        </a>
+        <a href="dashboard-billing.html" class="menu-item">
+          <i class="bi bi-credit-card"></i>
+          <span>Billing & Invoices</span>
+        </a>
+        <a href="dashboard-support.html" class="menu-item active">
+          <i class="bi bi-question-circle"></i>
+          <span>Support & RFPs</span>
+        </a>
+        <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+          <a href="login.html" class="menu-item">
+            <i class="bi bi-box-arrow-left"></i>
+            <span>Logout</span>
+          </a>
+        </div>
+      </nav>
+      
+    </aside>
+    
+    <!-- Sidebar Overlay for Mobile -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    
+    <!-- Main content wrapper -->
+    <div class="dashboard-main-content">
+      <!-- Topbar -->
+      <header class="dashboard-topbar">
+        <div class="d-flex align-items-center gap-3">
+          <button class="sidebar-open-btn d-lg-none" id="sidebar-open" aria-label="Open Sidebar">
+            <i class="bi bi-list"></i>
+          </button>
+          <a href="index.html" class="topbar-logo-link d-lg-none">
+            <i class="bi bi-broadcast"></i> AD<span>VANTAGE</span>
+          </a>
+          <h3 class="topbar-title d-none d-lg-block">Advertiser Hub - Support & Proposal RFPs</h3>
+        </div>
+        
+        <div class="topbar-actions d-flex align-items-center gap-2">
+          <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle Theme">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+          
+          <div class="topbar-user-dropdown-wrapper">
+            <div class="topbar-user d-flex align-items-center gap-2 ps-2 border-start" style="border-color: var(--border-color) !important;">
+              <div class="user-avatar" style="width: 32px; height: 32px; border-radius: 50%; background: rgba(56,189,248,0.15); color: var(--accent-color); display: flex; align-items: center; justify-content: center; font-size: 1rem; border: 1px solid rgba(56,189,248,0.3);">
+                <i class="bi bi-person-circle"></i>
+              </div>
+            </div>
+            <div class="topbar-user-dropdown">
+              <div style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                <span class="user-name" style="font-size: 0.85rem; font-weight: 600; display: block; color: var(--text-primary); margin-bottom: 0.15rem;">John Doe</span>
+                <span class="user-role" style="font-size: 0.7rem; color: var(--text-muted); display: block;">Advertiser</span>
+              </div>
+              <a href="login.html" style="font-size: 0.8rem; color: #EF4444; text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
+                <i class="bi bi-box-arrow-right"></i> Logout
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+      
+      <!-- Dashboard Body Wrapper -->
+      <main class="dashboard-body">
+        <section style="background: linear-gradient(180deg, var(--surface-color) 0%, transparent 100%); padding: 2.5rem 0 2rem 0;">
+          <div class="container text-center">
+            <span class="section-subtitle">Help Desk</span>
+            <h1 class="section-title">Support & Strategy RFPs</h1>
+            <p class="section-desc" style="max-width: 550px; margin: 0 auto;">Submit detailed RFP requirements for custom campaigns, raise questions on audits, and contact our OOH accounts team.</p>
+          </div>
+        </section>
+
+        <!-- Dashboard Layout -->
+        <section class="dashboard-layout">
+          <div class="container">
+            <div class="row g-4">
+              <!-- Left column support ticket form -->
+              <div class="col-lg-7">
+                <div class="card glass-panel p-4" style="border: 1px solid var(--border-color); height: 100%;">
+                  <h4 class="mb-3" style="font-family: var(--font-heading);"><i class="bi bi-chat-left-dots"></i> Open a Strategist Support Ticket</h4>
+                  <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.5rem;">Need dynamic weather creative overrides or detailed geofencing lift studies? Open a request with our OOH strategists team.</p>
+                  
+                  <form id="support-ticket-form" onsubmit="event.preventDefault(); alert('Your ticket has been logged. An OOH campaign manager will contact you in 2 hours.'); this.reset();">
+                    <div class="form-group mb-3">
+                      <label class="form-label" for="ticket-subject">Subject</label>
+                      <input type="text" id="ticket-subject" class="form-control" placeholder="e.g. Geofencing parameters for LA Retail campaign" required>
+                    </div>
+
+                    <div class="form-group mb-3">
+                      <label class="form-label" for="ticket-category">Category</label>
+                      <select id="ticket-category" class="form-control" required>
+                        <option value="rfp">RFP Custom Proposal Request</option>
+                        <option value="billing">Billing & Line of Credit Audit</option>
+                        <option value="geofence">Geofencing & Lift Studies setup</option>
+                        <option value="compliance">Creative Audit Dimensions & specs</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group mb-4">
+                      <label class="form-label" for="ticket-details">RFP Objectives & Campaign Targets</label>
+                      <textarea id="ticket-details" class="form-control" placeholder="Detail budget range, flight period targets, geofenced target demographics, or specific questions..." style="min-height: 120px;" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100 glow-btn">Submit Ticket to Accounts Team</button>
+                  </form>
+                </div>
+              </div>
+
+              <!-- Right column tickets logs -->
+              <div class="col-lg-5 d-flex flex-column gap-4">
+                <div class="card glass-panel p-4" style="border: 1px solid var(--border-color);">
+                  <h4 class="mb-3" style="font-family: var(--font-heading);"><i class="bi bi-clock-history"></i> Ticket History</h4>
+                  
+                  <div class="d-flex flex-column gap-2" style="font-size:0.85rem;">
+                    <div class="ticket-list-item">
+                      <div class="d-flex justify-content-between">
+                        <span style="font-weight:600;">RFP: geofencing for LA Retail stores</span>
+                        <span class="badge" style="background: rgba(245, 158, 11, 0.1); color: #F59E0B; border: 1px solid rgba(245, 158, 11, 0.2); font-weight: 500; font-size: 0.75rem; padding: 0.2rem 0.4rem;">In Progress</span>
+                      </div>
+                      <div class="text-muted mt-2" style="font-size: 0.75rem;">Opened on June 17, 2026 • Category: Geofence</div>
+                    </div>
+
+                    <div class="ticket-list-item">
+                      <div class="d-flex justify-content-between">
+                        <span style="font-weight:600;">Audit sizes for Curved LED screens</span>
+                        <span class="badge" style="background: rgba(34, 197, 94, 0.1); color: #22C55E; border: 1px solid rgba(34, 197, 94, 0.2); font-weight: 500; font-size: 0.75rem; padding: 0.2rem 0.4rem;">Resolved</span>
+                      </div>
+                      <div class="text-muted mt-2" style="font-size: 0.75rem;">Opened on June 05, 2026 • Category: Compliance</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card glass-panel p-4" style="border: 1px solid var(--border-color);">
+                  <h4 class="mb-3" style="font-family: var(--font-heading);"><i class="bi bi-headset"></i> Direct Contacts</h4>
+                  <div class="d-flex flex-column gap-3" style="font-size:0.85rem; color: var(--text-secondary);">
+                    <div><i class="bi bi-telephone-fill" style="color:var(--accent-color); margin-right:0.5rem;"></i> Hotline: <b>+1 (800) OOH-BUYS</b></div>
+                    <div><i class="bi bi-envelope-fill" style="color:var(--accent-color); margin-right:0.5rem;"></i> Strategists: <b>agency@advantage.com</b></div>
+                    <div><i class="bi bi-calendar2-week-fill" style="color:var(--accent-color); margin-right:0.5rem;"></i> Hours: <b>Mon-Fri, 9AM - 6PM EST</b></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/main.js"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Sidebar Toggle Logic for Mobile Viewports
+      const sidebar = document.getElementById('dashboard-sidebar');
+      const sidebarOpen = document.getElementById('sidebar-open');
+      const sidebarClose = document.getElementById('sidebar-close');
+      const sidebarOverlay = document.getElementById('sidebar-overlay');
+
+      if (sidebar && sidebarOpen && sidebarClose && sidebarOverlay) {
+        sidebarOpen.addEventListener('click', () => {
+          sidebar.classList.add('active');
+          sidebarOverlay.classList.add('active');
+        });
+
+        const closeSidebar = () => {
+          sidebar.classList.remove('active');
+          sidebarOverlay.classList.remove('active');
+        };
+
+        sidebarClose.addEventListener('click', closeSidebar);
+        sidebarOverlay.addEventListener('click', closeSidebar);
+      }
+    });
+  </script>
+</body>
+</html>

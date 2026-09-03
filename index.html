@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AdVantage OOH | Premium Billboard & Outdoor Advertising Networks</title>
+  <meta name="description"
+    content="Commercial-grade digital billboards, transit networks, and programmatic media reach planner dashboard. Scale your brand impact today.">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <script src="assets/js/theme-toggle.js"></script>
+</head>
+
+<body>
+  <!-- Page Loader -->
+  <div class="page-loader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky-header">
+    <div class="container">
+      <div class="navbar-container">
+        <a href="index.html" class="logo-link">
+          <i class="bi bi-broadcast"></i> AD<span>VANTAGE</span>
+        </a>
+        <button class="menu-toggle-btn" id="menu-toggle" aria-label="Toggle Navigation">
+          <i class="bi bi-list"></i>
+        </button>
+        <ul class="nav-links">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link active">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="inventory.html" class="nav-link">Inventory</a>
+          </li>
+          <li class="nav-item">
+            <a href="digital-billboards.html" class="nav-link">Digital Billboards</a>
+          </li>
+          <li class="nav-item">
+            <a href="transit-advertising.html" class="nav-link">Transit Advertising</a>
+          </li>
+          <li class="nav-item">
+            <a href="blog.html" class="nav-link">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">Contact</a>
+          </li>
+        </ul>
+        <div class="nav-actions">
+          <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle Theme">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+          <a href="signup.html" class="btn btn-highlight btn-sm glow-btn">Signup</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-sec hero-home-1">
+    <div class="grid-dot-pattern"></div>
+    <div class="container relative-z-2">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-6">
+          <h1 class="hero-title fade-up-init">
+            High-Impact Outdoor Media<br>
+            <span>Scale Worldwide.</span>
+          </h1>
+          <p class="hero-subtitle fade-up-init">
+            Plan, book, and launch out-of-home (OOH) advertising campaigns with precision. Access 45,000+ digital
+            screens, highway bulletins, and urban transit networks.
+          </p>
+          <div class="hero-actions fade-up-init">
+            <a href="inventory.html" class="btn btn-primary btn-icon"><i class="bi bi-search"></i> Explore Inventory</a>
+            <a href="contact.html" class="btn btn-outline">Request RFP</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card glass-panel glow-card fade-up-init p-2" style="border-radius: var(--card-radius);">
+            <div class="card-img-wrapper" style="border-radius: var(--card-radius); aspect-ratio: 16/10; background: linear-gradient(135deg, #090d16 0%, #111827 100%); display: flex; flex-direction: column; padding: 1.5rem; justify-content: space-between; overflow: hidden; position: relative;">
+              <!-- Background grid and accent light -->
+              <div class="grid-dot-pattern" style="opacity: 0.15;"></div>
+              <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: radial-gradient(circle, rgba(56,189,248,0.2) 0%, transparent 70%); filter: blur(20px);"></div>
+              
+              <!-- Mock Header -->
+              <div class="d-flex justify-content-between align-items-center mb-3" style="position: relative; z-index: 2;">
+                <div class="d-flex align-items-center gap-2">
+                  <div style="width: 10px; height: 10px; border-radius: 50%; background-color: #EA4335;"></div>
+                  <div style="width: 10px; height: 10px; border-radius: 50%; background-color: #FBBC05;"></div>
+                  <div style="width: 10px; height: 10px; border-radius: 50%; background-color: #34A853;"></div>
+                  <span style="font-size: 0.75rem; color: var(--text-secondary); margin-left: 0.5rem; font-family: monospace; letter-spacing: 0.5px;">advantage_planner_v2.0</span>
+                </div>
+                <span class="badge" style="background: rgba(56, 189, 248, 0.1); color: var(--accent-color); font-size: 0.7rem; border-radius: 4px; padding: 0.3rem 0.6rem; font-weight: 600;">ACTIVE PLAN</span>
+              </div>
+
+              <!-- Main Dashboard Area -->
+              <div class="row g-3" style="flex-grow: 1; position: relative; z-index: 2; margin: 0;">
+                <!-- Main Chart (col-8) -->
+                <div class="col-8" style="padding-left: 0;">
+                  <div class="h-100 p-3" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span style="font-size: 0.75rem; font-weight: 600; color: var(--text-secondary);">Impressions Reach (Weekly)</span>
+                      <span style="font-size: 0.7rem; color: #34A853; font-weight: 500;"><i class="bi bi-arrow-up-short"></i> 14.2%</span>
+                    </div>
+                    <!-- Custom SVG Line Graph -->
+                    <div style="height: 100px; margin-top: 0.5rem; display: flex; align-items: flex-end; position: relative;">
+                      <svg viewBox="0 0 100 40" width="100%" height="100%" preserveAspectRatio="none">
+                        <defs>
+                          <linearGradient id="chartGlow" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.3"/>
+                            <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.0"/>
+                          </linearGradient>
+                        </defs>
+                        <path d="M 0 35 Q 15 25 30 28 T 60 15 T 90 8 T 100 5 L 100 40 L 0 40 Z" fill="url(#chartGlow)" />
+                        <path d="M 0 35 Q 15 25 30 28 T 60 15 T 90 8 T 100 5" fill="none" stroke="#38BDF8" stroke-width="1.5" />
+                        <circle cx="60" cy="15" r="2" fill="#38BDF8" />
+                        <circle cx="90" cy="8" r="2" fill="#38BDF8" />
+                      </svg>
+                      <!-- Pulsing Node on Active Peak -->
+                      <div class="pulsing-dot" style="position: absolute; top: 12%; left: 90%; transform: translate(-50%, -50%);"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Side stats (col-4) -->
+                <div class="col-4 d-flex flex-column gap-2" style="padding-right: 0;">
+                  <div class="p-3" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
+                    <span style="font-size: 0.65rem; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 0.5px; font-weight: 500;">EST. REACH</span>
+                    <h4 style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 700; margin: 0.25rem 0; color: var(--text-primary);">1,480K</h4>
+                    <span style="font-size: 0.6rem; color: var(--text-secondary); font-weight: 500;">Commuters/week</span>
+                  </div>
+                  <div class="p-3" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
+                    <span style="font-size: 0.65rem; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 0.5px; font-weight: 500;">MATCH RATE</span>
+                    <h4 style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 700; margin: 0.25rem 0; color: var(--text-primary);">94.8%</h4>
+                    <span style="font-size: 0.6rem; color: #38BDF8; font-weight: 500;">Demographic Match</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Footer Bar -->
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-2" style="border-top: 1px solid rgba(255,255,255,0.05); position: relative; z-index: 2; font-size: 0.7rem; color: var(--text-secondary);">
+                <span class="d-flex align-items-center gap-1"><i class="bi bi-clock-history"></i> Auto-Sync: 2m ago</span>
+                <span class="d-flex align-items-center gap-1" style="color: #38BDF8;"><i class="bi bi-check-circle-fill"></i> Geofencing Ready</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Metric Statistics -->
+  <section
+    style="background-color: var(--surface-color); border-bottom: 1px solid var(--border-color); padding: 3rem 0;">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-6 col-md-3">
+          <div class="stat-card">
+            <div class="stat-number" data-value="1.2">0M+</div>
+            <div class="stat-label">Impressions</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-card">
+            <div class="stat-number" data-value="45">0K+</div>
+            <div class="stat-label">Placements</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-card">
+            <div class="stat-number" data-value="98">0%</div>
+            <div class="stat-label">Occupancy</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-card">
+            <div class="stat-number" data-value="142">0+</div>
+            <div class="stat-label">Cities</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions/Inventory Categories -->
+  <section>
+    <div class="container">
+      <div class="section-title-wrapper">
+        <span class="section-subtitle">Our Ad Formats</span>
+        <h2 class="section-title">Outdoor Formats Engineered for Reach</h2>
+        <p class="section-desc">Reach consumers during daily commutes, retail shopping sprees, and airport transit
+          journeys.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 glow-card">
+            <div class="card-img-wrapper">
+              <svg width="100%" height="100%" viewBox="0 0 400 250" style="background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); display: block; border-radius: 8px 8px 0 0;">
+                <defs>
+                  <linearGradient id="neonGlow1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#38bdf8"/>
+                    <stop offset="100%" stop-color="#818cf8"/>
+                  </linearGradient>
+                </defs>
+                <rect x="30" y="30" width="340" height="190" rx="12" fill="#020617" stroke="rgba(255,255,255,0.06)" stroke-width="2"/>
+                <!-- Simulated video content screen -->
+                <rect x="42" y="42" width="316" height="166" rx="8" fill="url(#neonGlow1)" opacity="0.15"/>
+                <!-- Glow screen grid lines -->
+                <path d="M42 90 H358 M42 160 H358 M140 42 V208 M260 42 V208" stroke="rgba(56, 189, 248, 0.15)" stroke-width="1"/>
+                <!-- Active play indicator and signal waves -->
+                <circle cx="200" cy="125" r="30" fill="rgba(56,189,248,0.1)"/>
+                <polygon points="195,115 195,135 212,125" fill="#38bdf8"/>
+                <circle cx="200" cy="125" r="40" fill="none" stroke="#38bdf8" stroke-width="1.5" opacity="0.4">
+                  <animate attributeName="r" values="30;50" dur="3s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.8;0" dur="3s" repeatCount="indefinite" />
+                </circle>
+              </svg>
+            </div>
+            <div class="card-body">
+              <h4 style="margin-bottom: 0.75rem;">Digital Screens</h4>
+              <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">Programmatic triggers,
+                dynamic video scheduling, and target dayparting filters for high impact.</p>
+              <a href="digital-billboards.html" style="font-weight: 500; font-size: 0.9rem;">Learn More <i
+                  class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 glow-card">
+            <div class="card-img-wrapper">
+              <svg width="100%" height="100%" viewBox="0 0 400 250" style="background: linear-gradient(135deg, #090d16 0%, #0c1c2e 100%); display: block; border-radius: 8px 8px 0 0;">
+                <defs>
+                  <linearGradient id="neonGlow2" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#34d399"/>
+                    <stop offset="100%" stop-color="#059669"/>
+                  </linearGradient>
+                </defs>
+                <!-- Steel pole structure -->
+                <rect x="195" y="140" width="10" height="85" fill="#1e293b"/>
+                <polygon points="170,225 230,225 210,140 190,140" fill="#1e293b" opacity="0.8"/>
+                <!-- Main billboard board -->
+                <rect x="40" y="30" width="320" height="140" rx="6" fill="#020617" stroke="rgba(255,255,255,0.06)" stroke-width="2"/>
+                <rect x="50" y="40" width="300" height="120" rx="4" fill="url(#neonGlow2)" opacity="0.1"/>
+                <path d="M50 80 H350 M50 120 H350" stroke="rgba(52, 211, 153, 0.15)" stroke-width="1"/>
+                <!-- Scenic route representation line -->
+                <path d="M 60 130 C 120 80, 280 80, 340 130" fill="none" stroke="#34d399" stroke-width="2" />
+                <circle cx="200" cy="105" r="3" fill="#34d399" />
+              </svg>
+            </div>
+            <div class="card-body">
+              <h4 style="margin-bottom: 0.75rem;">Roadside Bulletins</h4>
+              <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">Massive roadside
+                display frames positioned along main highway channels and toll terminals.</p>
+              <a href="inventory.html" style="font-weight: 500; font-size: 0.9rem;">Explore Locations <i
+                  class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 glow-card">
+            <div class="card-img-wrapper">
+              <svg width="100%" height="100%" viewBox="0 0 400 250" style="background: linear-gradient(135deg, #0b1120 0%, #1e293b 100%); display: block; border-radius: 8px 8px 0 0;">
+                <defs>
+                  <linearGradient id="neonGlow3" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#f43f5e"/>
+                    <stop offset="100%" stop-color="#e11d48"/>
+                  </linearGradient>
+                </defs>
+                <!-- Urban transit shelter outline -->
+                <rect x="60" y="40" width="280" height="160" rx="10" fill="#020617" stroke="rgba(255,255,255,0.06)" stroke-width="2"/>
+                <rect x="75" y="55" width="130" height="130" rx="6" fill="url(#neonGlow3)" opacity="0.1"/>
+                <!-- Radar visual inside shelter screen -->
+                <circle cx="140" cy="120" r="20" fill="none" stroke="#f43f5e" stroke-width="1.5" opacity="0.3"/>
+                <circle cx="140" cy="120" r="35" fill="none" stroke="#f43f5e" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+                <!-- Detail stats column -->
+                <rect x="220" y="55" width="100" height="35" rx="4" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)"/>
+                <circle cx="235" cy="72" r="4" fill="#f43f5e"/>
+                <rect x="250" y="69" width="55" height="6" rx="2" fill="var(--text-secondary)" opacity="0.5"/>
+                <rect x="220" y="100" width="100" height="35" rx="4" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)"/>
+                <circle cx="235" cy="117" r="4" fill="#f43f5e"/>
+                <rect x="250" y="114" width="55" height="6" rx="2" fill="var(--text-secondary)" opacity="0.5"/>
+              </svg>
+            </div>
+            <div class="card-body">
+              <h4 style="margin-bottom: 0.75rem;">Transit Networks</h4>
+              <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">Urban bus wraps, metro
+                shelters, airport terminal LCD billboards, and dynamic taxi-top panels.</p>
+              <a href="transit-advertising.html" style="font-weight: 500; font-size: 0.9rem;">View Transit Media <i
+                  class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Campaign Dashboard Preview (MANDATORY REQUIREMENT) -->
+  <section id="dashboard-preview"
+    style="background-color: var(--surface-color); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-5">
+          <span class="section-subtitle">Real-time Metrics</span>
+          <h2 class="section-title">Data-Driven Campaign Dashboard</h2>
+          <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+            Take full control of your OOH ads. Monitor traffic impressions, programmatic spending limits, device health
+            metrics, and audience demographics.
+          </p>
+          <ul
+            style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;">
+            <li class="d-flex align-items-start gap-3">
+              <div
+                style="background-color: rgba(56, 189, 248, 0.15); color: var(--accent-color); padding: 0.5rem; border-radius: 8px; display: inline-flex;">
+                <i class="bi bi-graph-up"></i>
+              </div>
+              <div>
+                <h5 style="margin-bottom: 0.25rem;">Live Audience Impressions</h5>
+                <p style="color: var(--text-secondary); font-size: 0.85rem;">Hourly traffic logging via camera sensors &
+                  network location logs.</p>
+              </div>
+            </li>
+            <li class="d-flex align-items-start gap-3">
+              <div
+                style="background-color: rgba(56, 189, 248, 0.15); color: var(--accent-color); padding: 0.5rem; border-radius: 8px; display: inline-flex;">
+                <i class="bi bi-clock-history"></i>
+              </div>
+              <div>
+                <h5 style="margin-bottom: 0.25rem;">Programmatic Dayparting</h5>
+                <p style="color: var(--text-secondary); font-size: 0.85rem;">Display ads only during peak rush hours or
+                  weather shifts.</p>
+              </div>
+            </li>
+          </ul>
+          <a href="signup.html" class="btn btn-primary">Try Dashboard UI</a>
+        </div>
+        <div class="col-lg-7">
+          <!-- Glassmorphic Dashboard UI Mock -->
+          <div class="card glass-panel p-4"
+            style="border-radius: var(--card-radius); border: 1px solid var(--border-color);">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <div class="d-flex align-items-center gap-3">
+                <div style="background-color: var(--accent-color); width: 10px; height: 10px; border-radius: 50%;">
+                </div>
+                <h5 class="m-0" style="font-family: var(--font-heading);">Campaign ID: #CS-8924</h5>
+              </div>
+              <span
+                style="font-size: 0.8rem; background: rgba(56,189,248,0.1); color: var(--accent-color); padding: 0.25rem 0.75rem; border-radius: 20px; font-weight: 500;">ACTIVE
+                PLAN</span>
+            </div>
+
+            <div class="row g-3 mb-4">
+              <div class="col-6 col-md-3">
+                <div
+                  style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); padding: 1rem; border-radius: 8px; text-align: center;">
+                  <span
+                    style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase;">Impressions</span>
+                  <h4 style="margin-top: 0.25rem; font-family: var(--font-heading); color: var(--accent-color);">1.84M
+                  </h4>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div
+                  style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); padding: 1rem; border-radius: 8px; text-align: center;">
+                  <span style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase;">CPM
+                    Avg</span>
+                  <h4 style="margin-top: 0.25rem; font-family: var(--font-heading); color: var(--accent-color);">$4.80
+                  </h4>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div
+                  style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); padding: 1rem; border-radius: 8px; text-align: center;">
+                  <span
+                    style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase;">Budget</span>
+                  <h4 style="margin-top: 0.25rem; font-family: var(--font-heading); color: var(--accent-color);">$8,800
+                  </h4>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div
+                  style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); padding: 1rem; border-radius: 8px; text-align: center;">
+                  <span style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase;">Slots
+                    Run</span>
+                  <h4 style="margin-top: 0.25rem; font-family: var(--font-heading); color: var(--accent-color);">24 / 24
+                  </h4>
+                </div>
+              </div>
+            </div>
+
+            <!-- Fake Chart -->
+            <div
+              style="height: 180px; border-bottom: 2px solid var(--border-color); display: flex; align-items: flex-end; justify-content: space-between; padding: 0 1rem; margin-bottom: 1rem;">
+              <div class="dashboard-bar"
+                style="background: linear-gradient(180deg, var(--highlight-color) 0%, var(--accent-color) 100%); width: 30px; height: 35%; border-radius: 4px 4px 0 0;">
+              </div>
+              <div class="dashboard-bar"
+                style="background: linear-gradient(180deg, var(--highlight-color) 0%, var(--accent-color) 100%); width: 30px; height: 55%; border-radius: 4px 4px 0 0; animation-delay: 0.1s;">
+              </div>
+              <div class="dashboard-bar"
+                style="background: linear-gradient(180deg, var(--highlight-color) 0%, var(--accent-color) 100%); width: 30px; height: 80%; border-radius: 4px 4px 0 0; animation-delay: 0.2s;">
+              </div>
+              <div class="dashboard-bar"
+                style="background: linear-gradient(180deg, var(--highlight-color) 0%, var(--accent-color) 100%); width: 30px; height: 60%; border-radius: 4px 4px 0 0; animation-delay: 0.3s;">
+              </div>
+              <div class="dashboard-bar"
+                style="background: linear-gradient(180deg, var(--highlight-color) 0%, var(--accent-color) 100%); width: 30px; height: 95%; border-radius: 4px 4px 0 0; animation-delay: 0.4s;">
+              </div>
+              <div class="dashboard-bar"
+                style="background: linear-gradient(180deg, var(--highlight-color) 0%, var(--accent-color) 100%); width: 30px; height: 75%; border-radius: 4px 4px 0 0; animation-delay: 0.5s;">
+              </div>
+            </div>
+            <div class="d-flex justify-content-between" style="font-size: 0.75rem; color: var(--text-secondary);">
+              <span>Mon</span>
+              <span>Tue</span>
+              <span>Wed</span>
+              <span>Thu</span>
+              <span>Fri</span>
+              <span>Sat</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing section -->
+  <section>
+    <div class="container">
+      <div class="section-title-wrapper">
+        <span class="section-subtitle">Flexible Advertising Packages</span>
+        <h2 class="section-title">Choose Your Reach Level</h2>
+        <p class="section-desc">We offer budget scales matching startups, mid-sized firms, and massive global
+          corporations.</p>
+      </div>
+      <div class="row g-4 justify-content-center">
+        <!-- Tier 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card p-4 h-100">
+            <h4 style="margin-bottom: 0.5rem;">Startup Impact</h4>
+            <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1.5rem;">Target local community
+              traffic</p>
+            <div
+              style="font-size: 2.25rem; font-family: var(--font-heading); font-weight: 500; color: var(--accent-color); margin-bottom: 1.5rem;">
+              $1,200 <span style="font-size: 1rem; color: var(--text-secondary); font-weight: 400;">/ mo</span></div>
+            <ul
+              style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; font-size: 0.9rem; color: var(--text-secondary);">
+              <li><i class="bi bi-check" style="color: var(--accent-color);"></i> 2 City-Center Street Panels</li>
+              <li><i class="bi bi-check" style="color: var(--accent-color);"></i> Static Poster Formats</li>
+              <li><i class="bi bi-check" style="color: var(--accent-color);"></i> 150K Est. Monthly Views</li>
+              <li><i class="bi bi-check" style="color: var(--accent-color);"></i> Mon-Fri Daytime Slots</li>
+            </ul>
+            <a href="contact.html" class="btn btn-outline btn-sm w-100">Select Package</a>
+          </div>
+        </div>
+        <!-- Tier 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card p-4 h-100 glass-panel glow-card" style="border: 2px solid var(--accent-color);">
+            <div
+              style="position: absolute; top: 15px; right: 15px; background: var(--accent-color); color: #020617; font-size: 0.7rem; font-weight: 500; padding: 0.25rem 0.5rem; border-radius: 4px;">
+              MOST POPULAR</div>
+            <h4 style="margin-bottom: 0.5rem;">Regional Digital</h4>
+            <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1.5rem;">High-visibility digital
+              screens</p>
+            <div
+              style="font-size: 2.25rem; font-family: var(--font-heading); font-weight: 500; color: var(--accent-color); margin-bottom: 1.5rem;">
+              $4,500 <span style="font-size: 1rem; color: var(--text-secondary); font-weight: 400;">/ mo</span></div>
+            <ul
+              style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; font-size: 0.9rem; color: var(--text-secondary);">
+              <li><i class="bi bi-check" style="color: var(--accent-color);"></i> Premium LED Bulletins</li>
+              <li><i class="bi bi-check" style="color: var(--accent-color);"></i> Dynamic Video Support </li>
+              <li><i class="bi bi-check" style="color: var(--accent-color);"></i> 900K Est. Monthly Views</li>
+              <li><i class="bi bi-check" style="color: var(--accent-color);"></i> 24/7 Programmatic Triggers</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary btn-sm w-100">Select Package</a>
+          </div>
+        </div>
+        <!-- Tier 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card p-4 h-100">
+            <h4 style="margin-bottom: 0.5rem;">Enterprise Domination</h4>
+            <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1.5rem;">Full network city
+              takeovers</p>
+            <div
+              style="font-size: 2.25rem; font-family: var(--font-heading); font-weight: 500; color: var(--accent-color); margin-bottom: 1.5rem;">
+              $15,000 <span style="font-size: 1rem; color: var(--text-secondary); font-weight: 400;">/ mo</span></div>
+            <ul
+              style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; font-size: 0.9rem; color: var(--text-secondary);">
+              <li><i class="bi bi-check" style="color: var(--accent-color);"></i> 10+ Placements
+              </li>
+              <li><i class="bi bi-check" style="color: var(--accent-color);"></i> Metro Screen Locks
+              </li>
+              <li><i class="bi bi-check" style="color: var(--accent-color);"></i> 5M+ Est. Monthly Views</li>
+              <li><i class="bi bi-check" style="color: var(--accent-color);"></i> Priority Support </li>
+            </ul>
+            <a href="contact.html" class="btn btn-outline btn-sm w-100">Select Package</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA section -->
+  <section style="background-color: var(--surface-color); border-top: 1px solid var(--border-color); padding: 5rem 0;">
+    <div class="container text-center">
+      <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Ready to Claim Your Outdoor Space?</h2>
+      <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 2.5rem auto;">
+        Get in touch with an account representative today to analyze traffic numbers in your target district and receive
+        a free campaign plan estimate.
+      </p>
+      <div class="d-flex justify-content-center gap-3 flex-wrap">
+        <a href="contact.html" class="btn btn-primary">Talk to an Expert</a>
+        <a href="inventory.html" class="btn btn-secondary">Browse Availability</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <a href="index.html" class="footer-logo">
+            <i class="bi bi-broadcast"></i> AD<span>VANTAGE</span>
+          </a>
+          <p style="font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.6;">
+            AdVantage is a leading developer and operator of high-impact digital billboard and out-of-home (OOH) media
+            display networks globally.
+          </p>
+          <div class="d-flex gap-3">
+            <a href="#" style="color: #94A3B8; font-size: 1.25rem;"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" style="color: #94A3B8; font-size: 1.25rem;"><i class="bi bi-linkedin"></i></a>
+            <a href="#" style="color: #94A3B8; font-size: 1.25rem;"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-2 offset-lg-1">
+          <h5 class="footer-column-title">Solutions</h5>
+          <ul class="footer-links">
+            <li class="footer-link-item"><a href="digital-billboards.html">Digital Billboards</a></li>
+            <li class="footer-link-item"><a href="inventory.html">Highway Bulletins</a></li>
+            <li class="footer-link-item"><a href="transit-advertising.html">Subway & Airport</a></li>
+            <li class="footer-link-item"><a href="transit-advertising.html">Bus Shelters</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-lg-2">
+          <h5 class="footer-column-title">Resources</h5>
+          <ul class="footer-links">
+            <li class="footer-link-item"><a href="blog.html">Marketing Guides</a></li>
+            <li class="footer-link-item"><a href="case-studies.html">Case Studies</a></li>
+            <li class="footer-link-item"><a href="contact.html">Request RFP</a></li>
+            <li class="footer-link-item"><a href="404.html">Support Help</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-lg-3">
+          <h5 class="footer-column-title">Newsletter</h5>
+          <p style="font-size: 0.85rem; margin-bottom: 1rem;">Receive media rates and regional inventory updates.</p>
+          <form style="display: flex; gap: 0.5rem;">
+            <input type="email" placeholder="Enter email"
+              style="background: #1E293B; border: 1px solid #334155; color: #FFFFFF; font-size: 0.85rem; padding: 0.5rem 0.75rem; border-radius: 4px; outline: none; flex-grow: 1;">
+            <button type="submit" class="btn btn-primary"
+              style="padding: 0.5rem 1rem; font-size: 0.85rem; border-radius: 4px;"><i
+                class="bi bi-arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p style="font-size: 0.8rem; margin: 0;">&copy; 2026 AdVantage Media Network. All rights reserved.</p>
+        <div class="d-flex gap-3" style="font-size: 0.8rem;">
+          <a href="#" style="color: #94A3B8;">Privacy Policy</a>
+          <a href="#" style="color: #94A3B8;">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

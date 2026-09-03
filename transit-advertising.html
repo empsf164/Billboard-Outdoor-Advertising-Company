@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AdVantage OOH | Transit Advertising & Commuter Networks</title>
+  <meta name="description" content="Capture the attention of urban commuters with bus shelter displays, metro wraps, and airport terminal LCD billboards.">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <script src="assets/js/theme-toggle.js"></script>
+</head>
+<body>
+  <!-- Page Loader -->
+  <div class="page-loader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky-header">
+    <div class="container">
+      <div class="navbar-container">
+        <a href="index.html" class="logo-link">
+          <i class="bi bi-broadcast"></i> AD<span>VANTAGE</span>
+        </a>
+        <button class="menu-toggle-btn" id="menu-toggle" aria-label="Toggle Navigation">
+          <i class="bi bi-list"></i>
+        </button>
+        <ul class="nav-links">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="inventory.html" class="nav-link">Inventory</a>
+          </li>
+          <li class="nav-item">
+            <a href="digital-billboards.html" class="nav-link">Digital Billboards</a>
+          </li>
+          <li class="nav-item">
+            <a href="transit-advertising.html" class="nav-link active">Transit Advertising</a>
+          </li>
+          <li class="nav-item">
+            <a href="blog.html" class="nav-link">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">Contact</a>
+          </li>
+        </ul>
+        <div class="nav-actions">
+          <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle Theme">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+          <a href="signup.html" class="btn btn-highlight btn-sm glow-btn">Signup</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="subpage-hero hero-transit">
+    <div class="grid-dot-pattern"></div>
+    <div class="container text-center relative-z-2">
+      <div class="subpage-hero-content">
+        <span class="section-subtitle">Commuter Channels</span>
+        <h1 class="section-title">Transit Advertising Solutions</h1>
+        <p class="section-desc">Build high-frequency reach with city bus wraps, subway platforms, and premium airport terminal placements.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transit Channels details -->
+  <section style="padding: 2rem 0 var(--spacing-lg) 0;">
+    <div class="container">
+      <div class="row align-items-center gy-5 mb-5">
+        <div class="col-lg-6">
+          <div class="card glass-panel glow-card p-2" style="border-radius: var(--card-radius);">
+            <div class="card-img-wrapper" style="aspect-ratio: 16/10; border-radius: 8px; background: linear-gradient(135deg, #020617 0%, #0f172a 100%); display: flex; flex-direction: column; padding: 1.5rem; justify-content: space-between; overflow: hidden; position: relative;">
+              <div class="grid-dot-pattern" style="opacity: 0.15;"></div>
+              
+              <!-- Mock Header -->
+              <div class="d-flex justify-content-between align-items-center mb-2" style="position: relative; z-index: 2;">
+                <div class="d-flex align-items-center gap-2">
+                  <i class="bi bi-broadcast-pin" style="color: var(--accent-color);"></i>
+                  <span style="font-size: 0.7rem; color: var(--text-secondary); font-family: monospace; letter-spacing: 0.5px;">geofence_network_node_4</span>
+                </div>
+                <span class="badge" style="background: rgba(56, 189, 248, 0.1); color: var(--accent-color); font-size: 0.65rem; border-radius: 4px; padding: 0.25rem 0.5rem; font-weight: 600;">GEOFENCED</span>
+              </div>
+
+              <!-- Main Panel Layout -->
+              <div class="row g-2 align-items-center" style="flex-grow: 1; position: relative; z-index: 2; margin: 0;">
+                <!-- Radar Circle Visual (col-5) -->
+                <div class="col-5" style="padding-left: 0; display: flex; align-items: center; justify-content: center;">
+                  <div style="width: 100px; height: 100px; border-radius: 50%; border: 1px solid rgba(56, 189, 248, 0.2); display: flex; align-items: center; justify-content: center; position: relative; background: rgba(56,189,248,0.01);">
+                    <!-- Pulsing center node -->
+                    <div style="width: 12px; height: 12px; border-radius: 50%; background: #38BDF8; box-shadow: 0 0 10px #38BDF8; position: relative; z-index: 2;"></div>
+                    <style>
+                      @keyframes radarPulse {
+                        0% { transform: scale(0.6); opacity: 1; }
+                        100% { transform: scale(1.6); opacity: 0; }
+                      }
+                      .radar-ring {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 50%;
+                        border: 1px solid rgba(56, 189, 248, 0.4);
+                        animation: radarPulse 3s infinite linear;
+                      }
+                    </style>
+                    <div class="radar-ring"></div>
+                    <div class="radar-ring" style="animation-delay: 1.5s;"></div>
+                  </div>
+                </div>
+
+                <!-- Stats list (col-7) -->
+                <div class="col-7" style="padding-right: 0; display: flex; flex-direction: column; gap: 0.5rem; justify-content: center;">
+                  <div class="p-2" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 6px;">
+                    <div style="font-size: 0.65rem; color: var(--text-secondary); text-transform: uppercase;">Average Dwell Time</div>
+                    <div style="font-size: 0.95rem; font-weight: 700; color: var(--text-primary);">6.4 Minutes</div>
+                  </div>
+                  <div class="p-2" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 6px;">
+                    <div style="font-size: 0.65rem; color: var(--text-secondary); text-transform: uppercase;">Commuter Repetition</div>
+                    <div style="font-size: 0.95rem; font-weight: 700; color: #34A853;">14.5x/month</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Footer Node Status -->
+              <div class="d-flex justify-content-between align-items-center mt-2 pt-2" style="border-top: 1px solid rgba(255,255,255,0.05); position: relative; z-index: 2; font-size: 0.65rem; color: var(--text-secondary);">
+                <span><i class="bi bi-wifi" style="color: #38BDF8; font-size: 0.75rem;"></i> Smart Sensor Hub Active</span>
+                <span>Reach: 92% Recall Index</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <h2 style="font-family: var(--font-heading); margin-bottom: 1.25rem;">High-Frequency Street Placements</h2>
+          <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+            Street furniture and transit advertisements are positioned exactly where pedestrian and vehicular traffic dwell. Commuters waiting for busses or trains generate high dwell-time counts, resulting in greater recall rates for your visual message.
+          </p>
+          <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem;">
+            <li class="d-flex align-items-center gap-3">
+              <i class="bi bi-chevron-right" style="color: var(--accent-color);"></i>
+              <span><strong>Airport Terminal Digital LCDs:</strong> Engage high-income business travelers in arrival/departure lounges.</span>
+            </li>
+            <li class="d-flex align-items-center gap-3">
+              <i class="bi bi-chevron-right" style="color: var(--accent-color);"></i>
+              <span><strong>Urban Bus & Metro Shelter Panels:</strong> Dominate metropolitan core coordinates on street level.</span>
+            </li>
+            <li class="d-flex align-items-center gap-3">
+              <i class="bi bi-chevron-right" style="color: var(--accent-color);"></i>
+              <span><strong>Subway Platform Posters:</strong> Maximize brand exposure to millions of urban rail commuters daily.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transit Formats & Specifications -->
+  <section style="background-color: var(--surface-color); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: var(--spacing-lg) 0;">
+    <div class="container">
+      <div class="section-title-wrapper">
+        <span class="section-subtitle">Media Formats</span>
+        <h2 class="section-title">Transit Media Specs & Reach Potential</h2>
+        <p class="section-desc">Select from premium format dimensions designed to fit diverse commuter channel environments.</p>
+      </div>
+      
+      <div class="row g-4 justify-content-center">
+        <!-- Format 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 p-4 text-center">
+            <div style="background-color: rgba(37, 99, 235, 0.1); color: var(--accent-color); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; font-size: 1.5rem;">
+              <i class="bi bi-bus-front"></i>
+            </div>
+            <h4 style="margin-bottom: 0.75rem;">Full Bus Wraps</h4>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">
+              Transform city buses into mobile billboards traversing high-density shopping districts, civic avenues, and suburban corridors daily.
+            </p>
+            <div style="font-size: 0.8rem; background: rgba(56, 189, 248, 0.08); color: var(--accent-color); padding: 0.4rem 0.8rem; border-radius: 6px; font-weight: 500; display: inline-block; margin-top: auto;">
+              Impact: 92% Recall Rating
+            </div>
+          </div>
+        </div>
+        
+        <!-- Format 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 p-4 text-center">
+            <div style="background-color: rgba(37, 99, 235, 0.1); color: var(--accent-color); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; font-size: 1.5rem;">
+              <i class="bi bi-train-front"></i>
+            </div>
+            <h4 style="margin-bottom: 0.75rem;">Subway Platforms</h4>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">
+              Engage passengers with highly visible posters and digital panels located at transfer gates, turnstiles, and trackside platforms.
+            </p>
+            <div style="font-size: 0.8rem; background: rgba(56, 189, 248, 0.08); color: var(--accent-color); padding: 0.4rem 0.8rem; border-radius: 6px; font-weight: 500; display: inline-block; margin-top: auto;">
+              Dwell Time: 4.8 Mins Avg.
+            </div>
+          </div>
+        </div>
+        
+        <!-- Format 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 p-4 text-center">
+            <div style="background-color: rgba(37, 99, 235, 0.1); color: var(--accent-color); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; font-size: 1.5rem;">
+              <i class="bi bi-airplane"></i>
+            </div>
+            <h4 style="margin-bottom: 0.75rem;">Airport Lounges</h4>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">
+              Command premium brand authority by targeting international business executives in airport security check lines and terminal lounges.
+            </p>
+            <div style="font-size: 0.8rem; background: rgba(56, 189, 248, 0.08); color: var(--accent-color); padding: 0.4rem 0.8rem; border-radius: 6px; font-weight: 500; display: inline-block; margin-top: auto;">
+              Audience: High net-worth
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Commuter Audience Demographics Section -->
+  <section style="padding: 5rem 0 var(--spacing-lg) 0; background: linear-gradient(180deg, transparent 0%, var(--surface-color) 100%);">
+    <div class="container">
+      <div class="section-title-wrapper text-center mb-5">
+        <span class="section-subtitle">Commuter Profiles</span>
+        <h2 class="section-title">Commuter Audience Demographics & Reach</h2>
+        <p class="section-desc" style="max-width: 600px; margin: 0 auto;">Our transit placements reach diverse, active, and high-purchasing cohorts on their daily journeys.</p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <!-- Stat Card 1 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card p-4 h-100" style="background-color: var(--bg-color); border: 1px solid var(--border-color);">
+            <h4 style="font-family: var(--font-heading); font-size: 1.25rem; margin-bottom: 1rem;"><i class="bi bi-people-fill" style="color: var(--accent-color);"></i> Active Age Profile</h4>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">
+              The core commuter segment consists of working professionals, students, and urban builders who travel daily.
+            </p>
+            <div class="mb-2 d-flex justify-content-between" style="font-size: 0.8rem; font-weight: 500;">
+              <span>Age 18 - 45 (Prime Buyers)</span>
+              <span style="color: var(--accent-color);">68%</span>
+            </div>
+            <div class="progress" style="height: 6px; background-color: var(--border-color); border-radius: 3px; overflow: hidden;">
+              <div class="progress-bar" role="progressbar" style="width: 68%; background-color: var(--accent-color);" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stat Card 2 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card p-4 h-100" style="background-color: var(--bg-color); border: 1px solid var(--border-color);">
+            <h4 style="font-family: var(--font-heading); font-size: 1.25rem; margin-bottom: 1rem;"><i class="bi bi-wallet2" style="color: var(--accent-color);"></i> Household Income</h4>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">
+              Airport and express subway line routes capture high-earning corporate decision makers and frequent flyers.
+            </p>
+            <div class="mb-2 d-flex justify-content-between" style="font-size: 0.8rem; font-weight: 500;">
+              <span>HH Income &gt; $85,000</span>
+              <span style="color: var(--accent-color);">54%</span>
+            </div>
+            <div class="progress" style="height: 6px; background-color: var(--border-color); border-radius: 3px; overflow: hidden;">
+              <div class="progress-bar" role="progressbar" style="width: 54%; background-color: var(--accent-color);" aria-valuenow="54" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stat Card 3 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card p-4 h-100" style="background-color: var(--bg-color); border: 1px solid var(--border-color);">
+            <h4 style="font-family: var(--font-heading); font-size: 1.25rem; margin-bottom: 1rem;"><i class="bi bi-repeat" style="color: var(--accent-color);"></i> Travel Frequency</h4>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">
+              Daily repeats build high frequency. Routine paths reinforce brand messaging repeatedly throughout the month.
+            </p>
+            <div class="mb-2 d-flex justify-content-between" style="font-size: 0.8rem; font-weight: 500;">
+              <span>15+ Commutes per Month</span>
+              <span style="color: var(--accent-color);">72%</span>
+            </div>
+            <div class="progress" style="height: 6px; background-color: var(--border-color); border-radius: 3px; overflow: hidden;">
+              <div class="progress-bar" role="progressbar" style="width: 72%; background-color: var(--accent-color);" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Call to Action section -->
+  <section style="background-color: var(--surface-color); border-top: 1px solid var(--border-color); padding: 5rem 0;">
+    <div class="container text-center">
+      <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Request a Commuter Route Campaign Plan</h2>
+      <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 2.5rem auto;">
+        Our local transit agency team can compile route mapping, traffic volumes, and slot availability matching your target audience demographics.
+      </p>
+      <div class="d-flex justify-content-center gap-3 flex-wrap">
+        <a href="contact.html" class="btn btn-primary">Submit RFP Proposal</a>
+        <a href="inventory.html" class="btn btn-secondary">Explore Catalog Locations</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <a href="index.html" class="footer-logo">
+            <i class="bi bi-broadcast"></i> AD<span>VANTAGE</span>
+          </a>
+          <p style="font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.6;">
+            AdVantage is a leading developer and operator of high-impact digital billboard and out-of-home (OOH) media display networks globally.
+          </p>
+          <div class="d-flex gap-3">
+            <a href="#" style="color: #94A3B8; font-size: 1.25rem;"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" style="color: #94A3B8; font-size: 1.25rem;"><i class="bi bi-linkedin"></i></a>
+            <a href="#" style="color: #94A3B8; font-size: 1.25rem;"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-2 offset-lg-1">
+          <h5 class="footer-column-title">Solutions</h5>
+          <ul class="footer-links">
+            <li class="footer-link-item"><a href="digital-billboards.html">Digital Billboards</a></li>
+            <li class="footer-link-item"><a href="inventory.html">Highway Bulletins</a></li>
+            <li class="footer-link-item"><a href="transit-advertising.html">Subway & Airport</a></li>
+            <li class="footer-link-item"><a href="transit-advertising.html">Bus Shelters</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-lg-2">
+          <h5 class="footer-column-title">Resources</h5>
+          <ul class="footer-links">
+            <li class="footer-link-item"><a href="blog.html">Marketing Guides</a></li>
+            <li class="footer-link-item"><a href="case-studies.html">Case Studies</a></li>
+            <li class="footer-link-item"><a href="contact.html">Request RFP</a></li>
+            <li class="footer-link-item"><a href="404.html">Support Help</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-lg-3">
+          <h5 class="footer-column-title">Newsletter</h5>
+          <p style="font-size: 0.85rem; margin-bottom: 1rem;">Receive media rates and regional inventory updates.</p>
+          <form style="display: flex; gap: 0.5rem;">
+            <input type="email" placeholder="Enter email" style="background: #1E293B; border: 1px solid #334155; color: #FFFFFF; font-size: 0.85rem; padding: 0.5rem 0.75rem; border-radius: 4px; outline: none; flex-grow: 1;">
+            <button type="submit" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem; border-radius: 4px;"><i class="bi bi-arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p style="font-size: 0.8rem; margin: 0;">&copy; 2026 AdVantage Media Network. All rights reserved.</p>
+        <div class="d-flex gap-3" style="font-size: 0.8rem;">
+          <a href="#" style="color: #94A3B8;">Privacy Policy</a>
+          <a href="#" style="color: #94A3B8;">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+
+

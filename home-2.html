@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AdVantage OOH | Geographic Discovery & Location Hotspots</title>
+  <meta name="description"
+    content="Discover premium billboards, LED screens, and airport transit wraps by city hotspots. Interactive location discovery maps.">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <script src="assets/js/theme-toggle.js"></script>
+</head>
+
+<body>
+  <!-- Page Loader -->
+  <div class="page-loader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky-header">
+    <div class="container">
+      <div class="navbar-container">
+        <a href="index.html" class="logo-link">
+          <i class="bi bi-broadcast"></i> AD<span>VANTAGE</span>
+        </a>
+        <button class="menu-toggle-btn" id="menu-toggle" aria-label="Toggle Navigation">
+          <i class="bi bi-list"></i>
+        </button>
+        <ul class="nav-links">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link active">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="inventory.html" class="nav-link">Inventory</a>
+          </li>
+          <li class="nav-item">
+            <a href="digital-billboards.html" class="nav-link">Digital Billboards</a>
+          </li>
+          <li class="nav-item">
+            <a href="transit-advertising.html" class="nav-link">Transit Advertising</a>
+          </li>
+          <li class="nav-item">
+            <a href="blog.html" class="nav-link">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">Contact</a>
+          </li>
+        </ul>
+        <div class="nav-actions">
+          <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle Theme">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+          <a href="signup.html" class="btn btn-highlight btn-sm glow-btn">Signup</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Alternative Hero Section with Slideshow / Video glow style -->
+  <section class="hero-sec hero-home-2">
+    <div class="grid-dot-pattern"></div>
+    <div class="container relative-z-2">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-6 order-last order-lg-first">
+          <div class="card glass-panel glow-card fade-up-init p-2" style="border-radius: var(--card-radius);">
+            <div class="card-img-wrapper" style="border-radius: var(--card-radius); aspect-ratio: 16/10; background: linear-gradient(135deg, #090d16 0%, #111827 100%); display: flex; flex-direction: column; padding: 1.5rem; justify-content: space-between; overflow: hidden; position: relative;">
+              <div class="grid-dot-pattern" style="opacity: 0.15;"></div>
+              
+              <!-- Mock Header -->
+              <div class="d-flex justify-content-between align-items-center mb-3" style="position: relative; z-index: 2;">
+                <div class="d-flex align-items-center gap-2">
+                  <i class="bi bi-compass-fill" style="color: var(--accent-color); font-size: 1rem;"></i>
+                  <span style="font-size: 0.75rem; color: var(--text-secondary); font-family: monospace; letter-spacing: 0.5px;">active_discovery_map_v2</span>
+                </div>
+                <span class="badge" style="background: rgba(37,99,235,0.15); color: #60A5FA; font-size: 0.7rem; border-radius: 4px; padding: 0.3rem 0.6rem; font-weight: 600;">LA / NYC CONNECTED</span>
+              </div>
+
+              <!-- Main Interactive Map Discover Info -->
+              <div class="row g-3" style="flex-grow: 1; position: relative; z-index: 2; margin: 0;">
+                <!-- Left stats/coords (col-6) -->
+                <div class="col-6" style="padding-left: 0; display: flex; flex-direction: column; gap: 0.5rem; justify-content: center;">
+                  <div class="p-3" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px;">
+                    <div style="font-size: 0.6rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Active Hotspots</div>
+                    <div style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin-top: 0.15rem;">124 Locations</div>
+                  </div>
+                  <div class="p-3" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px;">
+                    <div style="font-size: 0.6rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Avg Daily Traffic</div>
+                    <div style="font-size: 1.1rem; font-weight: 700; color: #34A853; margin-top: 0.15rem;">89K cars/day</div>
+                  </div>
+                </div>
+
+                <!-- Right Radar Graph (col-6) -->
+                <div class="col-6" style="padding-right: 0; display: flex; align-items: center; justify-content: center; position: relative;">
+                  <div style="width: 130px; height: 130px; border-radius: 50%; border: 1px dashed rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; position: relative; background: rgba(56,189,248,0.02);">
+                    <div style="width: 80px; height: 80px; border-radius: 50%; border: 1px dashed rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center;">
+                      <div style="width: 30px; height: 30px; border-radius: 50%; background: radial-gradient(circle, rgba(56,189,248,0.4) 0%, transparent 80%); display: flex; align-items: center; justify-content: center;">
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background-color: #38BDF8; box-shadow: 0 0 10px #38BDF8;"></div>
+                      </div>
+                    </div>
+                    <!-- Pulsing ring animations -->
+                    <div class="pulsing-dot" style="position: absolute; top: 20%; left: 80%;"></div>
+                    <div class="pulsing-dot" style="position: absolute; top: 70%; left: 15%;"></div>
+                    <!-- Sweep indicator line -->
+                    <div style="position: absolute; width: 50%; height: 2px; background: linear-gradient(90deg, #38BDF8, transparent); top: 50%; left: 50%; transform-origin: left center; transform: rotate(45deg); opacity: 0.6;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Footer Coordinates Status -->
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-2" style="border-top: 1px solid rgba(255,255,255,0.05); position: relative; z-index: 2; font-size: 0.7rem; color: var(--text-secondary);">
+                <span><i class="bi bi-geo-alt-fill" style="color: #38BDF8;"></i> Live GPS Feeds Active</span>
+                <span>Audit standard: Geopath Certified</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <h1 class="hero-title fade-up-init">
+            Locate Your Perfect Audience<br>
+            <span>By Target Hotspots.</span>
+          </h1>
+          <p class="hero-subtitle fade-up-init">
+            Find premium digital displays and high-impact traditional billboards located in major commercial centers,
+            traffic junctions, and retail corridors.
+          </p>
+
+          <!-- Live Inventory Quick Lookup Widget -->
+          <div class="card glass-panel p-3 fade-up-init mb-4" style="border: 1px solid var(--border-color);">
+            <form action="inventory.html" method="GET" class="row g-2">
+              <div class="col-sm-4">
+                <select class="form-control" name="location" style="font-size: 0.85rem; padding: 0.6rem;">
+                  <option value="">Select City...</option>
+                  <option value="la">Los Angeles</option>
+                  <option value="ny">New York</option>
+                  <option value="ch">Chicago</option>
+                </select>
+              </div>
+              <div class="col-sm-4">
+                <select class="form-control" name="format" style="font-size: 0.85rem; padding: 0.6rem;">
+                  <option value="">Select Media...</option>
+                  <option value="digital-bulletin">Digital Screen</option>
+                  <option value="bulletin">Roadside Bulletin</option>
+                  <option value="transit">Transit Shelter</option>
+                </select>
+              </div>
+              <div class="col-sm-4">
+                <button type="submit" class="btn btn-primary btn-sm w-100" style="padding: 0.6rem;"><i
+                    class="bi bi-search"></i> Check Spots</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Location Discovery Map (MANDATORY REQUIREMENT) -->
+  <section
+    style="background-color: var(--surface-color); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="section-title-wrapper">
+        <span class="section-subtitle">Geographic Targeting</span>
+        <h2 class="section-title">Interactive Location Hotspots</h2>
+        <p class="section-desc">Click on any of our premium city hotspots to view immediate traffic indices, GPS
+          coordinates, and media availability.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="d-flex flex-column gap-3">
+            <div class="card p-3 map-hotspot-card active-spot" data-coords="34.0928, -118.3287" data-map-url="https://maps.google.com/maps?q=Sunset%20Blvd,%20Los%20Angeles,%20CA&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              style="cursor: pointer; transition: var(--transition);">
+              <div class="d-flex justify-content-between align-items-center">
+                <h5 class="m-0">Sunset Blvd Corridor</h5>
+                <span class="badge"
+                  style="background: rgba(56,189,248,0.1); color: var(--accent-color); font-size: 0.75rem; padding: 0.25rem 0.5rem;">LA</span>
+              </div>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.5rem; margin-bottom: 0;">Daily
+                Traffic: 95K cars/day | 3 Digital screens available.</p>
+            </div>
+
+            <div class="card p-3 map-hotspot-card" data-coords="40.7580, -73.9855" data-map-url="https://maps.google.com/maps?q=Times%20Square,%20New%20York,%20NY&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              style="cursor: pointer; transition: var(--transition);">
+              <div class="d-flex justify-content-between align-items-center">
+                <h5 class="m-0">Times Square Hub</h5>
+                <span class="badge"
+                  style="background: rgba(56,189,248,0.1); color: var(--accent-color); font-size: 0.75rem; padding: 0.25rem 0.5rem;">NYC</span>
+              </div>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.5rem; margin-bottom: 0;">Daily
+                Traffic: 380K pedest./day | 5 screens available.</p>
+            </div>
+
+            <div class="card p-3 map-hotspot-card" data-coords="41.8818, -87.6231" data-map-url="https://maps.google.com/maps?q=Michigan%20Avenue%20Bridge,%20Chicago,%20IL&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              style="cursor: pointer; transition: var(--transition);">
+              <div class="d-flex justify-content-between align-items-center">
+                <h5 class="m-0">Michigan Avenue Bridge</h5>
+                <span class="badge"
+                  style="background: rgba(56,189,248,0.1); color: var(--accent-color); font-size: 0.75rem; padding: 0.25rem 0.5rem;">CHI</span>
+              </div>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.5rem; margin-bottom: 0;">Daily
+                Traffic: 62K commuters/day | 2 traditional bulletins.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="map-canvas-container" style="border: 1px solid var(--border-color); height: 400px; position: relative; overflow: hidden; border-radius: var(--card-radius); background: #020617;">
+            <iframe id="google-map-iframe" 
+                    src="https://maps.google.com/maps?q=Sunset%20Blvd,%20Los%20Angeles,%20CA&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            
+            <div class="map-card-floating card glass-panel p-3" style="position: absolute; bottom: 15px; left: 15px; border: 1px solid var(--border-color); background: rgba(15,23,42,0.85); backdrop-filter: blur(8px); z-index: 10;">
+              <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-geo-alt-fill" style="color: var(--accent-color);"></i>
+                <span style="font-size: 0.85rem; font-weight: 500; color: #FFFFFF;">Selected Coordinates: <span id="current-coordinate-span" style="color: var(--accent-color); font-family: monospace;">34.0928, -118.3287</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Logos Brand Grid -->
+  <section style="padding: 4rem 0; background-color: var(--bg-color);">
+    <div class="container text-center">
+      <span
+        style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px;">TRUSTED
+        BY WORLD-CLASS BRANDS</span>
+      <div class="row g-4 align-items-center justify-content-center mt-4" style="opacity: 0.75;">
+        <div class="col-6 col-sm-4 col-md-2 d-flex justify-content-center">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-muted);">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10M8 12a15.3 15.3 0 0 1 4-10 15.3 15.3 0 0 1 4 10" stroke-opacity="0.5"/>
+            </svg>
+            <span style="font-family: var(--font-heading); font-size: 0.8rem; font-weight: 700; color: var(--text-muted); letter-spacing: 1.5px; text-transform: uppercase;">Sphere</span>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2 d-flex justify-content-center">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-muted);">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+            <span style="font-family: var(--font-heading); font-size: 0.8rem; font-weight: 700; color: var(--text-muted); letter-spacing: 1.5px; text-transform: uppercase;">Nexus</span>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2 d-flex justify-content-center">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-muted);">
+              <path d="m3 21 9-18 9 18H3z" />
+              <path d="m21 21-9-9-9 9" stroke-opacity="0.5" />
+            </svg>
+            <span style="font-family: var(--font-heading); font-size: 0.8rem; font-weight: 700; color: var(--text-muted); letter-spacing: 1.5px; text-transform: uppercase;">Vertex</span>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2 d-flex justify-content-center">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-muted);">
+              <path d="M4 15l8-8 8 8M4 20l8-8 8 8" />
+            </svg>
+            <span style="font-family: var(--font-heading); font-size: 0.8rem; font-weight: 700; color: var(--text-muted); letter-spacing: 1.5px; text-transform: uppercase;">Apex</span>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2 d-flex justify-content-center">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-muted);">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+              <line x1="12" y1="22.08" x2="12" y2="12" stroke-opacity="0.5"/>
+            </svg>
+            <span style="font-family: var(--font-heading); font-size: 0.8rem; font-weight: 700; color: var(--text-muted); letter-spacing: 1.5px; text-transform: uppercase;">Acme</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section
+    style="background-color: var(--surface-color); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="section-title-wrapper text-center">
+        <span class="section-subtitle">Testimonials</span>
+        <h2 class="section-title">Success Stories from Our Partners</h2>
+        <p class="section-desc">See how leading brands and marketing agencies leverage our OOH networks to scale
+          campaign reach.</p>
+      </div>
+      <div class="row g-4 justify-content-center">
+        <!-- Testimonial 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card glass-panel p-4 h-100 glow-card" style="border: 1px solid var(--border-color);">
+            <div class="d-flex gap-1 mb-3 text-warning" style="font-size: 0.9rem;">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <p
+              style="font-style: italic; color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.7; font-weight: 400;">
+              "Advantage's digital highway bulletins gave our summer beverage launch massive reach. The real-time
+              programmatic triggers allows to swap creatives based on weather changes."
+            </p>
+            <div class="d-flex align-items-center gap-3 mt-auto">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&h=120&q=80" 
+                   alt="Marcus Sterling" 
+                   style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-color);">
+              <div>
+                <h5 style="margin: 0; font-size: 0.95rem; font-family: var(--font-heading); font-weight: 500;">Marcus
+                  Sterling</h5>
+                <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: 400;">VP of Marketing</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Testimonial 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card glass-panel p-4 h-100 glow-card" style="border: 1px solid var(--border-color);">
+            <div class="d-flex gap-1 mb-3 text-warning" style="font-size: 0.9rem;">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <p
+              style="font-style: italic; color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.7; font-weight: 400;">
+              "As a media buyer, I require transparency and impression counts. AdVantage's OOH metrics dashboard
+              provided GPS-audited plays and dynamic traffic logs. Highly recommend for enterprise."
+            </p>
+            <div class="d-flex align-items-center gap-3 mt-auto">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&h=120&q=80" 
+                   alt="Sarah Jenkins" 
+                   style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-color);">
+              <div>
+                <h5 style="margin: 0; font-size: 0.95rem; font-family: var(--font-heading); font-weight: 500;">Sarah
+                  Jenkins</h5>
+                <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: 400;">Senior Media
+                  Planner</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Testimonial 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card glass-panel p-4 h-100 glow-card" style="border: 1px solid var(--border-color);">
+            <div class="d-flex gap-1 mb-3 text-warning" style="font-size: 0.9rem;">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <p
+              style="font-style: italic; color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.7; font-weight: 400;">
+              "The bus shelter poster placements along high-street retail areas drove direct in-store foot traffic lift.
+              Working with their creative strategists made Vinyl installation and compliance verification simple."
+            </p>
+            <div class="d-flex align-items-center gap-3 mt-auto">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&h=120&q=80" 
+                   alt="David Chen" 
+                   style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-color);">
+              <div>
+                <h5 style="margin: 0; font-size: 0.95rem; font-family: var(--font-heading); font-weight: 500;">David
+                  Chen</h5>
+                <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: 400;">Founder</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section style="background-color: var(--bg-color);">
+    <div class="container" style="max-width: 800px;">
+      <div class="section-title-wrapper text-center">
+        <span class="section-subtitle">FAQ</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-desc">Have queries about OOH placements, production schedules, or pricing? Find rapid answers
+          below.</p>
+      </div>
+
+      <div class="faq-accordion d-flex flex-column gap-3">
+        <!-- FAQ 1 -->
+        <details class="faq-item card glass-panel p-3" style="border: 1px solid var(--border-color);">
+          <summary class="faq-question d-flex justify-content-between align-items-center"
+            style="font-family: var(--font-heading); font-weight: 500; font-size: 1rem; cursor: pointer; list-style: none;">
+            <span>What is the difference between digital and traditional OOH?</span>
+            <i class="bi bi-plus faq-toggle-icon"></i>
+          </summary>
+          <div class="faq-answer mt-3"
+            style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; font-weight: 400;">
+            Digital Out-of-Home (DOOH) utilizes high-impact LED/LCD screens allowing dynamic programmatic content
+            changes, weather/dayparting triggers, and multiple creative schedules. Traditional OOH utilizes physical
+            printed vinyl layouts wrapped onto roadside frames, securing exclusive round-the-clock display ownership.
+          </div>
+        </details>
+
+        <!-- FAQ 2 -->
+        <details class="faq-item card glass-panel p-3" style="border: 1px solid var(--border-color);">
+          <summary class="faq-question d-flex justify-content-between align-items-center"
+            style="font-family: var(--font-heading); font-weight: 500; font-size: 1rem; cursor: pointer; list-style: none;">
+            <span>How do you calculate daily audience impressions?</span>
+            <i class="bi bi-plus faq-toggle-icon"></i>
+          </summary>
+          <div class="faq-answer mt-3"
+            style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; font-weight: 400;">
+            Audience metrics are derived from mobile location logs, traffic census audits, and local commuter route
+            databases. This ensures reliable data tracking to calculate your estimated views, CPM rates, and unique
+            demographic reach indices.
+          </div>
+        </details>
+
+        <!-- FAQ 3 -->
+        <details class="faq-item card glass-panel p-3" style="border: 1px solid var(--border-color);">
+          <summary class="faq-question d-flex justify-content-between align-items-center"
+            style="font-family: var(--font-heading); font-weight: 500; font-size: 1rem; cursor: pointer; list-style: none;">
+            <span>Can I customize the active run times of my digital ad spots?</span>
+            <i class="bi bi-plus faq-toggle-icon"></i>
+          </summary>
+          <div class="faq-answer mt-3"
+            style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; font-weight: 400;">
+            Yes, through our advertiser dashboard, you can schedule slots matching specific rush hours, dayparts, or
+            meteorological triggers (like temperature or rainfall alerts).
+          </div>
+        </details>
+
+        <!-- FAQ 4 -->
+        <details class="faq-item card glass-panel p-3" style="border: 1px solid var(--border-color);">
+          <summary class="faq-question d-flex justify-content-between align-items-center"
+            style="font-family: var(--font-heading); font-weight: 500; font-size: 1rem; cursor: pointer; list-style: none;">
+            <span>What are the lead times for vinyl printing and installation?</span>
+            <i class="bi bi-plus faq-toggle-icon"></i>
+          </summary>
+          <div class="faq-answer mt-3"
+            style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; font-weight: 400;">
+            Traditional physical campaigns require printed vinyl shipments. Average production and installation lead
+            times are 10–14 business days from approved creative submission. Digital board campaigns can be uploaded and
+            activated within 2 hours.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Call to Action section -->
+  <section style="background-color: var(--surface-color); border-top: 1px solid var(--border-color); padding: 5rem 0;">
+    <div class="container text-center">
+      <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Ready to Boost Campaign ROAS?</h2>
+      <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 2.5rem auto;">
+        Access demographic metrics and choose location placements suited perfectly for your retail campaigns. Talk to
+        our planning agency today.
+      </p>
+      <div class="d-flex justify-content-center gap-3 flex-wrap">
+        <a href="contact.html" class="btn btn-primary">RFP Proposal Inquiry</a>
+        <a href="inventory.html" class="btn btn-secondary">Explore Placements</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <a href="index.html" class="footer-logo">
+            <i class="bi bi-broadcast"></i> AD<span>VANTAGE</span>
+          </a>
+          <p style="font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.6;">
+            AdVantage is a leading developer and operator of high-impact digital billboard and out-of-home (OOH) media
+            display networks globally.
+          </p>
+          <div class="d-flex gap-3">
+            <a href="#" style="color: #94A3B8; font-size: 1.25rem;"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" style="color: #94A3B8; font-size: 1.25rem;"><i class="bi bi-linkedin"></i></a>
+            <a href="#" style="color: #94A3B8; font-size: 1.25rem;"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-2 offset-lg-1">
+          <h5 class="footer-column-title">Solutions</h5>
+          <ul class="footer-links">
+            <li class="footer-link-item"><a href="digital-billboards.html">Digital Billboards</a></li>
+            <li class="footer-link-item"><a href="inventory.html">Highway Bulletins</a></li>
+            <li class="footer-link-item"><a href="transit-advertising.html">Subway & Airport</a></li>
+            <li class="footer-link-item"><a href="transit-advertising.html">Bus Shelters</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-lg-2">
+          <h5 class="footer-column-title">Resources</h5>
+          <ul class="footer-links">
+            <li class="footer-link-item"><a href="blog.html">Marketing Guides</a></li>
+            <li class="footer-link-item"><a href="case-studies.html">Case Studies</a></li>
+            <li class="footer-link-item"><a href="contact.html">Request RFP</a></li>
+            <li class="footer-link-item"><a href="404.html">Support Help</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-lg-3">
+          <h5 class="footer-column-title">Newsletter</h5>
+          <p style="font-size: 0.85rem; margin-bottom: 1rem;">Receive media rates and regional inventory updates.</p>
+          <form style="display: flex; gap: 0.5rem;">
+            <input type="email" placeholder="Enter email"
+              style="background: #1E293B; border: 1px solid #334155; color: #FFFFFF; font-size: 0.85rem; padding: 0.5rem 0.75rem; border-radius: 4px; outline: none; flex-grow: 1;">
+            <button type="submit" class="btn btn-primary"
+              style="padding: 0.5rem 1rem; font-size: 0.85rem; border-radius: 4px;"><i
+                class="bi bi-arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p style="font-size: 0.8rem; margin: 0;">&copy; 2026 AdVantage Media Network. All rights reserved.</p>
+        <div class="d-flex gap-3" style="font-size: 0.8rem;">
+          <a href="#" style="color: #94A3B8;">Privacy Policy</a>
+          <a href="#" style="color: #94A3B8;">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Specific interaction logic for home-2 map coordinates toggle
+    document.querySelectorAll('.map-hotspot-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const coords = card.getAttribute('data-coords');
+        document.getElementById('current-coordinate-span').textContent = coords;
+        document.querySelectorAll('.map-hotspot-card').forEach(c => c.classList.remove('active-spot'));
+        card.classList.add('active-spot');
+      });
+    });
+  </script>
+</body>
+
+</html>

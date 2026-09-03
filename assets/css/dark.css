@@ -1,0 +1,170 @@
+html[data-theme="dark"] {
+  --bg-color: #020617;
+  --surface-color: #0B1120;
+  --border-color: rgba(255, 255, 255, 0.08);
+  
+  --primary-color: #0F172A;
+  --secondary-color: #94A3B8;
+  --accent-color: #38BDF8;
+  --highlight-color: #60A5FA;
+  
+  --text-primary: #E2E8F0;
+  --text-secondary: #94A3B8;
+  --text-muted: #7C8BA1;
+  
+  --glass-bg: rgba(11, 17, 32, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --glass-shadow: rgba(0, 0, 0, 0.4);
+  
+  --card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+  --card-shadow-lg: 0 20px 40px -5px rgba(0, 0, 0, 0.7);
+
+  /* Footer overrides for Dark Mode */
+  --footer-bg: #0F172A;
+  --footer-text: #94A3B8;
+  --footer-heading: #FFFFFF;
+  --footer-border: rgba(255, 255, 255, 0.08);
+  --footer-link: #94A3B8;
+  --footer-link-hover: #FFFFFF;
+  --footer-bottom-border: #1E293B;
+  --footer-input-bg: #1E293B;
+  --footer-input-border: #334155;
+  --footer-input-text: #FFFFFF;
+}
+
+/* Glassmorphism overrides for specific cards */
+html[data-theme="dark"] .glass-panel {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Glow effects in Dark Mode */
+html[data-theme="dark"] .glow-btn {
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.35);
+}
+html[data-theme="dark"] .glow-btn:hover {
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.6);
+}
+
+html[data-theme="dark"] .glow-card:hover {
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.15);
+}
+
+/* Input Fields overrides in Dark Mode */
+html[data-theme="dark"] .form-control {
+  background-color: rgba(11, 17, 32, 0.5);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+html[data-theme="dark"] .form-control:focus {
+  background-color: rgba(11, 17, 32, 0.8);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
+}
+
+/* Dark mode custom scrollbars */
+html[data-theme="dark"] ::-webkit-scrollbar {
+  width: 8px;
+}
+html[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: #020617;
+}
+html[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 4px;
+}
+html[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Dynamic Interactive Dashboard Graphics overrides */
+html[data-theme="dark"] .grid-dot-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Map markers neon glow animation */
+html[data-theme="dark"] .map-marker-pin {
+  background-color: var(--accent-color);
+  box-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color);
+}
+
+/* Button overrides in Dark Mode */
+html[data-theme="dark"] .btn-secondary {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: var(--text-primary);
+}
+html[data-theme="dark"] .btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--accent-color);
+}
+
+/* Hero background image dark theme overrides */
+html[data-theme="dark"] .hero-title span {
+  background: linear-gradient(135deg, var(--accent-color) 0%, var(--highlight-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+html[data-theme="dark"] .hero-home-1 {
+  background-image: linear-gradient(90deg, rgba(2, 6, 23, 0.96) 0%, rgba(2, 6, 23, 0.8) 50%, rgba(2, 6, 23, 0.35) 100%), url('https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1920&q=80') !important;
+}
+
+html[data-theme="dark"] .hero-home-2 {
+  background-image: linear-gradient(270deg, rgba(2, 6, 23, 0.96) 0%, rgba(2, 6, 23, 0.8) 50%, rgba(2, 6, 23, 0.35) 100%), url('https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1920&q=80') !important;
+}
+
+@media (max-width: 991px) {
+  html[data-theme="dark"] .hero-home-1,
+  html[data-theme="dark"] .hero-home-2 {
+    background-image: linear-gradient(180deg, rgba(2, 6, 23, 0.97) 0%, rgba(2, 6, 23, 0.93) 100%), url('https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1920&q=80') !important;
+  }
+}
+
+/* Subpage Hero overrides for Dark Mode */
+html[data-theme="dark"] .subpage-hero {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+html[data-theme="dark"] .subpage-hero .section-title {
+  background: linear-gradient(135deg, var(--text-primary) 30%, var(--accent-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+html[data-theme="dark"] .subpage-hero-content {
+  background: rgba(11, 17, 32, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.4);
+}
+
+html[data-theme="dark"] .hero-about {
+  background-image: linear-gradient(180deg, rgba(2, 6, 23, 0.6) 0%, rgba(11, 17, 32, 0.8) 100%), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80') !important;
+}
+
+html[data-theme="dark"] .hero-contact {
+  background-image: linear-gradient(180deg, rgba(2, 6, 23, 0.6) 0%, rgba(11, 17, 32, 0.8) 100%), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80') !important;
+}
+
+html[data-theme="dark"] .hero-digital {
+  background-image: linear-gradient(180deg, rgba(2, 6, 23, 0.6) 0%, rgba(11, 17, 32, 0.8) 100%), url('https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1920&q=80') !important;
+}
+
+html[data-theme="dark"] .hero-transit {
+  background-image: linear-gradient(180deg, rgba(2, 6, 23, 0.6) 0%, rgba(11, 17, 32, 0.8) 100%), url('https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=1920&q=80') !important;
+}
+
+html[data-theme="dark"] .hero-case-studies {
+  background-image: linear-gradient(180deg, rgba(2, 6, 23, 0.6) 0%, rgba(11, 17, 32, 0.8) 100%), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1920&q=80') !important;
+}
+
+html[data-theme="dark"] .hero-blog {
+  background-image: linear-gradient(180deg, rgba(2, 6, 23, 0.6) 0%, rgba(11, 17, 32, 0.8) 100%), url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1920&q=80') !important;
+}
+
+html[data-theme="dark"] .hero-inventory {
+  background-image: linear-gradient(180deg, rgba(2, 6, 23, 0.6) 0%, rgba(11, 17, 32, 0.8) 100%), url('https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1920&q=80') !important;
+}
